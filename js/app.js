@@ -31,8 +31,6 @@ function cacheDom() {
   dom.emptyState = document.getElementById("emptyState");
   dom.statusMessage = document.getElementById("statusMessage");
   dom.issueCountText = document.getElementById("issueCountText");
-  dom.openCount = document.getElementById("openCount");
-  dom.closedCount = document.getElementById("closedCount");
   dom.tabButtons = document.querySelectorAll(".tab-btn");
 
   dom.issueModal = document.getElementById("issueModal");
@@ -160,11 +158,6 @@ function updateHeaderTitle() {
 }
 
 function updateCounts() {
-  const openCount = state.allIssues.filter((issue) => issue.status === "open").length;
-  const closedCount = state.allIssues.filter((issue) => issue.status === "closed").length;
-
-  dom.openCount.textContent = openCount;
-  dom.closedCount.textContent = closedCount;
   dom.issueCountText.textContent = `${state.visibleIssues.length} Issues`;
 }
 
