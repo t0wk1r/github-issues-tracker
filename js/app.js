@@ -442,12 +442,12 @@ function escapeHtml(text = "") {
 
 function statusOpenIcon() {
   return `
-    <img src="../assets/Open-Status.png" />
+    <img src="assets/Open-Status.png" />
   `;
 }
 
 function statusClosedIcon() {
   return `
-    <img src="../assets/Closed- Status .png" />
+    <img src="assets/Closed- Status .png" />
   `;
 }
