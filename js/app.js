@@ -43,11 +43,17 @@ function cacheDom() {
 
 function bindEvents() {
   dom.tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      state.currentTab = button.dataset.tab;
-      updateActiveTabUI();
-      applyFiltersAndRender();
-    });
+    button.addEventListener("click", async () => {
+    state.currentTab = button.dataset.tab;
+    updateActiveTabUI();
+
+    setLoading(true);
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    applyFiltersAndRender();
+    setLoading(false);
+  });
   });
 
   dom.searchForm.addEventListener("submit", async (event) => {
@@ -84,6 +90,8 @@ async function loadAllIssues() {
   hideStatusMessage();
 
   try {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     const response = await fetch(`${API_BASE}/issues`);
     const result = await response.json();
 
