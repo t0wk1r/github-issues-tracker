@@ -8,11 +8,6 @@ const state = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!window.Auth.isLoggedIn()) {
-    window.location.href = "./index.html";
-    return;
-  }
-
   cacheDom();
   bindEvents();
   updateActiveTabUI();
@@ -25,7 +20,6 @@ function cacheDom() {
   dom.pageTitle = document.getElementById("pageTitle");
   dom.searchForm = document.getElementById("searchForm");
   dom.searchInput = document.getElementById("searchInput");
-  dom.logoutBtn = document.getElementById("logoutBtn");
   dom.loader = document.getElementById("loader");
   dom.issuesGrid = document.getElementById("issuesGrid");
   dom.emptyState = document.getElementById("emptyState");
@@ -70,10 +64,7 @@ function bindEvents() {
     await searchIssues(query);
   });
 
-  dom.logoutBtn.addEventListener("click", () => {
-    window.Auth.logout();
-    window.location.href = "./index.html";
-  });
+
 
   dom.closeModalBtn.addEventListener("click", closeModal);
   dom.modalOverlay.addEventListener("click", closeModal);
