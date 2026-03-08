@@ -29,36 +29,51 @@
 </head>
 <body class="min-h-screen bg-slate-100 text-slate-800">
   <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-2xl ">
-          <img src="assets/github-logo.png" alt="">
+  <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+
+      <!-- Left -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 overflow-hidden">
+          <img
+            src="assets/github-logo.png"
+            alt="GitHub Logo"
+            class="h-8 w-8 object-contain"
+          >
         </div>
 
-        <div>
-          <p class="text-lg font-bold">GitHub Issues Tracker</p>
-          <p class="text-xs text-slate-500">Track and manage your project issues</p>
+        <div class="min-w-0">
+          <h1 class="text-lg font-bold leading-tight text-slate-800 sm:text-xl">
+            GitHub Issues Tracker
+          </h1>
+          <p class="text-xs text-slate-500 sm:text-sm">
+            Track and manage your project issues
+          </p>
         </div>
       </div>
 
-      <div class="flex w-full max-w-xl flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-        <form id="searchForm" class="flex w-full items-center gap-2">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search issues..."
-      class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 sm:w-80"
-    />
-    <button
-      type="submit"
-      class="rounded-xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
-    >
-      Search
-    </button>
-  </form>
+      <!-- Right -->
+      <div class="w-full lg:w-auto">
+        <form id="searchForm" class="flex w-full flex-col gap-2 sm:flex-row sm:items-center">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search issues..."
+            class="h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 sm:min-w-[280px] lg:min-w-[320px]"
+          />
+
+          <button
+            type="submit"
+            class="h-11 rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-700 sm:min-w-[100px]"
+          >
+            Search
+          </button>
+        </form>
       </div>
+
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
     <div class="mb-6">
